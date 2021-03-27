@@ -1,0 +1,16 @@
+.box {
+  border: grey 1px solid;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+.row {
+  display: block;
+}
+.answer {
+  display: block;
+  height: 50px;
+}

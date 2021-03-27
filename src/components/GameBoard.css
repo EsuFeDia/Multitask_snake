@@ -1,0 +1,40 @@
+.SnakeBoard {
+  position: relative;
+  margin: 10px;
+  vertical-align: middle;
+  width: 500px;
+  height: 500px;
+  min-width: 500px;
+  display: table-cell;
+  border: 2px solif #000;
+  border-style: solid;
+}
+.info {
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgb(219, 219, 219);
+}
+.MathBoard {
+  vertical-align: middle;
+  display: table-cell;
+  min-width: 300px;
+  margin: 10px;
+  border: 2px solif #000;
+  border-style: solid;
+}
+.left {
+  left: 0;
+  background-color: #fff;
+}
+
+.right {
+  right: 0;
+  background-color: #fff;
+}
+
+.Wrapper {
+  width: 800px;
+  min-width: 800px;
+  text-align: center;
+  margin: auto;
+}
