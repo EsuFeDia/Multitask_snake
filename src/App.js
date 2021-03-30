@@ -1,3 +1,11 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Main app render.
+
+*/
+
 import "./App.css";
 import React, { useState } from "react";
 import GameBoard from "./components/GameBoard";

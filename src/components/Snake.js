@@ -1,3 +1,12 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Function that renders the snake
+
+
+*/
+
 import React from "react";
 import "./GameBoard.css";
 

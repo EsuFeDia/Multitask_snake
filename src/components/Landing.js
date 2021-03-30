@@ -1,3 +1,13 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Function that renders the "HOME" page
+to be better designed to include more functionaility.
+or potentially uses router to redirect pages to achieve similar results.
+
+*/
+
 import React from "react";
 import "../App.css";
 

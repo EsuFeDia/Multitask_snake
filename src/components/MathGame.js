@@ -1,5 +1,13 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Class that is responsible for rendering and creating functionaility for the math game.
+
+
+*/
+
 import React, { Component } from "react";
-//import NumberPad from "./NumberPad";
 import "./NumPad.css";
 
 export default class MathGame extends Component {

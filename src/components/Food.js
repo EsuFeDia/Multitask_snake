@@ -1,3 +1,10 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Basic function that renders the food objection on board.
+
+*/
 import React from "react";
 import "./GameBoard.css";
 

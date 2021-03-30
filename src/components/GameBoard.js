@@ -1,3 +1,10 @@
+/*
+Portfolio project By Jake.Z
+Author: Jake.Zhang
+
+Main class that holds all core functions and renderer for the board.
+
+*/
 import React, { Component } from "react";
 import "./GameBoard.css";
 import Snake from "./Snake";
