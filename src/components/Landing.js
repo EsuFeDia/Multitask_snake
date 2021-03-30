@@ -1,19 +1,26 @@
 import React from "react";
+import "../App.css";
 
 export default function Landing(props) {
   return (
-    <div>
+    <div className="Landing">
       <h1>Multi-tasking Snake! </h1>
       {props.start ? (
         ""
       ) : (
         <>
           <h2>Instructions</h2>
-          <p style={{ width: "700px" }}>
-            Press the arrow keys to navigate the snake. But beware, you have
-            limited amount of direction changes available. The only way to
-            obtain moves is to answer the question on the right, with either the
-            number pad or by clicking on the virtual number pad underneath the
+
+          <p>
+            Press the arrow keys or WASD to navigate the snake. But beware, you
+            have limited amount of direction changes available.
+          </p>
+          <p>
+            The only way to obtain moves is to answer the question on the right
+          </p>
+          <p>
+            To enter an answer, you can either use the number pad on your
+            keyboard or by clicking on the virtual number pad underneath the
             question.
           </p>
 

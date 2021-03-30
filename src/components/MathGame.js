@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NumberPad from "./NumberPad";
+//import NumberPad from "./NumberPad";
 import "./NumPad.css";
 
 export default class MathGame extends Component {
@@ -16,12 +16,17 @@ export default class MathGame extends Component {
   }
 
   onKeyDown = (e) => {
+    console.log(e.keyCode);
+    if (this.props.paused) {
+      return;
+    }
     e = e || window.event;
     if (e.keyCode >= 96 && e.keyCode <= 105) {
       this.handleClick(e.key);
     } else if (e.keyCode === 8) {
       this.setState({ result: "" });
-    } else if (e.keyCode === 13) {
+    } else if (e.keyCode === 32 || e.keyCode === 13) {
+      console.log("space pressed");
       this.checkSum();
     }
   };
@@ -48,32 +53,42 @@ export default class MathGame extends Component {
   render() {
     let val = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     return (
-      <div style={{ margin: "10%" }}>
-        <h1>
-          {this.props.num_1} + {this.props.num_2}
-        </h1>
-        <div>
-          <div className="answer">{this.state.result}</div>
-          {val.map((item, i) => (
-            <button
-              className="box"
-              key={i}
-              onClick={() => {
-                this.handleClick(item);
-              }}
-            >
-              {item}
-            </button>
-          ))}
-          <button className="box" onClick={() => this.setState({ result: "" })}>
-            Clear
-          </button>
-          <button className="box" onClick={() => this.checkSum()}>
-            Submit
-          </button>
-        </div>
-        {/* <NumberPad checkSum={this.checkSum} /> */}
-      </div>
+      <>
+        {this.props.paused ? (
+          <>
+            <span className="info"> Dont Cheat! </span>
+          </>
+        ) : (
+          <div style={{ margin: "10%" }}>
+            <h1 className="answer info">
+              {this.props.num_1} + {this.props.num_2}
+            </h1>
+            <div>
+              <div className="answer info">{this.state.result}</div>
+              {val.map((item, i) => (
+                <button
+                  className="box"
+                  key={i}
+                  onClick={() => {
+                    this.handleClick(item);
+                  }}
+                >
+                  {item}
+                </button>
+              ))}
+              <button
+                className="box"
+                onClick={() => this.setState({ result: "" })}
+              >
+                Clear
+              </button>
+              <button className="box" onClick={() => this.checkSum()}>
+                Submit
+              </button>
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 }

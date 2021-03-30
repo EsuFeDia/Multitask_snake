@@ -58,7 +58,7 @@ export default class GameBoard extends Component {
 
   coreLoop() {
     setTimeout(() => {
-      if (this.state.gameState) {
+      if (this.state.gameState && !this.state.paused) {
         this.snakeMove();
         this.boundCheck();
         this.bodyCheck();
@@ -70,7 +70,7 @@ export default class GameBoard extends Component {
   }
 
   decreaseMove() {
-    if (this.state.allowedMoves == 0) {
+    if (this.state.allowedMoves === 0) {
       return;
     }
     this.setState({
@@ -79,9 +79,6 @@ export default class GameBoard extends Component {
   }
 
   snakeMove = () => {
-    if (this.state.paused) {
-      return;
-    }
     let body = [...this.state.snakeBody];
     let head = body[body.length - 1];
     switch (this.state.direction) {
@@ -97,6 +94,7 @@ export default class GameBoard extends Component {
       case "DOWN":
         head = [head[0], head[1] + 2];
         break;
+      default:
     }
     body.push(head);
     body.shift();
@@ -106,15 +104,17 @@ export default class GameBoard extends Component {
   };
 
   onKeyDown = (e) => {
-    if (this.state.stopKey) {
-      return;
-    }
-    if (this.state.allowedMoves <= 0) {
+    if (
+      this.state.stopKey ||
+      this.state.allowedMoves <= 0 ||
+      this.state.paused === true
+    ) {
       return;
     }
     e = e || window.event;
     switch (e.keyCode) {
       case 38: //Up
+      case 87: //W
         if (this.state.direction === "DOWN" || this.state.direction === "UP") {
           break;
         }
@@ -123,6 +123,7 @@ export default class GameBoard extends Component {
         this.stopKey();
         break;
       case 40: //Down
+      case 83: //S
         if (this.state.direction === "DOWN" || this.state.direction === "UP") {
           break;
         }
@@ -131,6 +132,7 @@ export default class GameBoard extends Component {
         this.stopKey();
         break;
       case 37: //Left
+      case 65: //A
         if (
           this.state.direction === "RIGHT" ||
           this.state.direction === "LEFT"
@@ -142,6 +144,7 @@ export default class GameBoard extends Component {
         this.stopKey();
         break;
       case 39: //Right
+      case 68: //Right
         if (
           this.state.direction === "RIGHT" ||
           this.state.direction === "LEFT"
@@ -285,16 +288,13 @@ export default class GameBoard extends Component {
                       height: this.state.height,
                     }}
                   >
-                    {this.state.paused ? (
-                      <span className="info">Dont Cheat!</span>
-                    ) : (
-                      <MathGame
-                        correct={this.correct}
-                        incorrect={this.incorrect}
-                        num_1={this.state.num_1}
-                        num_2={this.state.num_2}
-                      />
-                    )}
+                    <MathGame
+                      paused={this.state.paused}
+                      correct={this.correct}
+                      incorrect={this.incorrect}
+                      num_1={this.state.num_1}
+                      num_2={this.state.num_2}
+                    />
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 .SnakeBoard {
+  background-color: honeydew;
   position: relative;
   margin: 10px;
   vertical-align: middle;
@@ -6,20 +7,37 @@
   height: 500px;
   min-width: 500px;
   display: table-cell;
-  border: 2px solif #000;
+  border: 2px solid #000;
   border-style: solid;
+}
+.SnakeBody {
+  position: absolute;
+  height: 2%;
+  width: 2%;
+  background-color: #000;
+  border: 1px solid#fff;
+  z-index: 2;
+}
+.Food {
+  position: absolute;
+  height: 2%;
+  width: 2%;
+  background-color: rgb(245, 2, 2);
+  border: 1px solid#fff;
+  z-index: 1;
 }
 .info {
   font-size: 2rem;
-  font-weight: 400;
-  color: rgb(219, 219, 219);
+  font-weight: 600;
+  color: rgba(7, 0, 0, 0.37);
 }
 .MathBoard {
+  background-color: honeydew;
   vertical-align: middle;
   display: table-cell;
   min-width: 300px;
   margin: 10px;
-  border: 2px solif #000;
+  border: 2px solid #000;
   border-style: solid;
 }
 .left {
@@ -37,4 +55,5 @@
   min-width: 800px;
   text-align: center;
   margin: auto;
+  padding: 2%;
 }

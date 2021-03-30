@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameBoard.css";
 
 const Snake = (props) => {
   return (
@@ -8,7 +9,7 @@ const Snake = (props) => {
           left: `${pos[0]}%`,
           top: `${pos[1]}%`,
         };
-        return <div className="snakeBody" key={i} style={style}></div>;
+        return <div className="SnakeBody" key={i} style={style}></div>;
       })}
     </div>
   );

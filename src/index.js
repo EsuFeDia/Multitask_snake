@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import GameBoard from "./components/GameBoard";
+//import GameBoard from "./components/GameBoard";
 
 ReactDOM.render(
   <React.StrictMode>

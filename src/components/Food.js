@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameBoard.css";
 
 const Food = (props) => {
   const style = {
@@ -6,8 +7,7 @@ const Food = (props) => {
     top: `${props.foodCoord[1]}%`,
   };
 
-  //return <div className="snakeBody" key={i} style={style}></div>;
-  return <div className="food" style={style}></div>;
+  return <div className="Food" style={style}></div>;
 };
 
 export default Food;

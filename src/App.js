@@ -6,10 +6,10 @@ import Landing from "./components/Landing";
 function App() {
   const [start, setStart] = useState(false);
   return (
-    <>
+    <div className="Container">
       <Landing start={start} startGame={() => setStart(true)} />
       {start ? <GameBoard start={start} /> : ""}
-    </>
+    </div>
   );
 }
 
