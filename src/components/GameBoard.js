@@ -307,7 +307,6 @@ export default class GameBoard extends Component {
               </div>
             ) : (
               <div>
-                //<GameOver gameRestart={this.gameRestart} />
                 <div>
                   <h1>Game Over</h1>
                   <button onClick={this.gameRestart}>Restart</button>
