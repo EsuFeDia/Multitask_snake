@@ -24,7 +24,7 @@ export default class MathGame extends Component {
   }
 
   onKeyDown = (e) => {
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
     if (this.props.paused) {
       return;
     }
