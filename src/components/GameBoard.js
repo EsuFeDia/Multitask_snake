@@ -5,7 +5,7 @@ Author: Jake.Zhang
 Main class that holds all core functions and renderer for the board.
 
 */
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "./GameBoard.css";
 import Snake from "./Snake";
 import Food from "./Food";
