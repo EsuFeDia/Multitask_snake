@@ -307,7 +307,8 @@ export default class GameBoard extends Component {
               </div>
             ) : (
               <div>
-                <GameOver gameRestart={this.gameRestart} />
+                //<GameOver gameRestart={this.gameRestart} />
+                < gameRestart={this.gameRestart} />
                 <p> Your Score : </p>
                 {this.state.score}
               </div>
