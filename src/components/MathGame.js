@@ -41,6 +41,8 @@ export default class MathGame extends Component {
   checkSum() {
     let ans = this.props.num_1 + this.props.num_2;
     let res = parseInt(this.state.result);
+    console.log(ans);
+    console.log(res);
     if (res === ans) {
       this.props.correct();
     } else {
