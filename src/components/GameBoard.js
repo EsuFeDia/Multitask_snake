@@ -59,7 +59,14 @@ export default class GameBoard extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this.onKeyDown);
+    useEffect(() => {
+      document.addEventListener("keydown", this.onKeyDown)
+      // cleanup
+        return () => {
+        document.removeEventListener("keydown", this.onKeyDown)
+      }
+    }, [])
+    // document.addEventListener("keydown", this.onKeyDown);
     this.coreLoop();
   }
 
